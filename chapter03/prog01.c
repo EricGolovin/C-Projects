@@ -16,5 +16,5 @@ int main (void) {
 
     printf("boolVar = %i\n", boolVar);
     
-    return 0
+    return 0;
 }
