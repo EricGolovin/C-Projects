@@ -6,7 +6,6 @@
 #include <math.h>
 
 int main(void) {
-    double cosModule;
     double x = 0.43;
     double a = 0.7;
     double b = 0.05;
@@ -16,13 +15,8 @@ int main(void) {
     printf("R = %lf\n", (rUpper / rLower));
 
     double cosValue = cos(pow(a + b, 3));
-    if (cos >= 0) {
-        cosModule = cosValue;
-    } else {
-        cosModule = -cos(pow((-x - b), 3));
-    }
 
-    double s = sqrt(x * b / a) + cosModule;
+    double s = sqrt(x * b / a) + fabs(cosModule);
     printf("S = %lf", s);
 
     return 0;

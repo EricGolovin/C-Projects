@@ -2,7 +2,6 @@
 #include <math.h>
 
 int main(void) {
-	double moduleValue;
 	double a = 10.2;
 	double b = 9.3;
 	double x = 2.4;
@@ -12,14 +11,8 @@ int main(void) {
 	printf("K = %lf\n", k);
 
 	double value = x - b;
-	if (value >= 0) {
-		moduleValue = value;
-	}
-	else {
-		moduleValue = -x + b;
-	}
 
-	double m = (exp(-c * x) * x + pow(sqrt(x + a), 3)) / (x - sqrt(moduleValue));
+	double m = (exp(-c * x) * x + pow(sqrt(x + a), 3)) / (x - sqrt(fabs(value)));
 	printf("M = %lf\n", m);
 
 	return 0;

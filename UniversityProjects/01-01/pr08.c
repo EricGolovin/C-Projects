@@ -6,7 +6,6 @@
 #include <math.h>
 
 int main(void) {
-	double qModule;
 	double x = 1.82;
 	double y = 18.5;
 	double z = 3.4;
@@ -16,13 +15,7 @@ int main(void) {
 
 	double q = pow(x, y / x) - pow(sqrt(y / x), 3);
 
-	if (q >= 0) {
-		qModule = q;
-	} else {
-		qModule = -pow(x, y / x) + pow(sqrt(y / x), 3);
-	}
-
-	printf("q = %lf\n", qModule);
+	printf("q = %lf\n", fabs(q));
 
 	return 0;
 }

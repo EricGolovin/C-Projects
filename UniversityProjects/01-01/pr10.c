@@ -37,12 +37,6 @@ int main(void) {
 
     double value = x - 1;
 
-    if (value >= 0) {
-        moduleValue = value;
-    } else {
-        moduleValue = 1 - x;
-    }
-
     for (counter = 1; counter <= 2; counter++) {
         twoFactorial *= counter;
     }
@@ -51,7 +45,7 @@ int main(void) {
         fourFactorial *= counter;
     }
 
-    double aUpper = sqrt(moduleValue) - sqrt(y);
+    double aUpper = sqrt(fabs(value)) - sqrt(y);
     double aLower = 1 + (pow(x, 2) / twoFactorial) + (pow(y, 2) / fourFactorial);
     printf("a = %lf\n", aUpper / aLower);
 

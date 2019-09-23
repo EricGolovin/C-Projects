@@ -10,20 +10,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1cc43ad5-6d8b-438c-a135-2c93f9349b5e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/C-Projects.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UniversityProjects/01/pr09" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UniversityProjects/01/pr09.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UniversityProjects/01/pr10" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UniversityProjects/01/pr10.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UniversityProjects/01/pr11" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UniversityProjects/01/pr11.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UniversityProjects/01/pr12" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UniversityProjects/01/pr12.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter07/prog06-ex6.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UniversityProjects/01/pr08" beforeDir="false" afterPath="$PROJECT_DIR$/UniversityProjects/01/pr08" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UniversityProjects/01-01/pr19.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UniversityProjects/01-01/pr21.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UniversityProjects/01-02/pr01.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniversityProjects/01/math.h" beforeDir="false" afterPath="$PROJECT_DIR$/UniversityProjects/01-01/math.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniversityProjects/01/pr01" beforeDir="false" afterPath="$PROJECT_DIR$/UniversityProjects/01-01/pr01" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniversityProjects/01/pr01.c" beforeDir="false" afterPath="$PROJECT_DIR$/UniversityProjects/01-01/pr01.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniversityProjects/01/pr02" beforeDir="false" afterPath="$PROJECT_DIR$/UniversityProjects/01-01/pr02" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniversityProjects/01/pr02.c" beforeDir="false" afterPath="$PROJECT_DIR$/UniversityProjects/01-01/pr02.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniversityProjects/01/pr03" beforeDir="false" afterPath="$PROJECT_DIR$/UniversityProjects/01-01/pr03" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniversityProjects/01/pr03.c" beforeDir="false" afterPath="$PROJECT_DIR$/UniversityProjects/01-01/pr03.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniversityProjects/01/pr04" beforeDir="false" afterPath="$PROJECT_DIR$/UniversityProjects/01-01/pr04" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniversityProjects/01/pr04.c" beforeDir="false" afterPath="$PROJECT_DIR$/UniversityProjects/01-01/pr04.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniversityProjects/01/pr05" beforeDir="false" afterPath="$PROJECT_DIR$/UniversityProjects/01-01/pr05" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniversityProjects/01/pr05.c" beforeDir="false" afterPath="$PROJECT_DIR$/UniversityProjects/01-01/pr05.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniversityProjects/01/pr06" beforeDir="false" afterPath="$PROJECT_DIR$/UniversityProjects/01-01/pr06" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniversityProjects/01/pr06.c" beforeDir="false" afterPath="$PROJECT_DIR$/UniversityProjects/01-01/pr06.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniversityProjects/01/pr07" beforeDir="false" afterPath="$PROJECT_DIR$/UniversityProjects/01-01/pr07" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniversityProjects/01/pr07.c" beforeDir="false" afterPath="$PROJECT_DIR$/UniversityProjects/01-01/pr07.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniversityProjects/01/pr08" beforeDir="false" afterPath="$PROJECT_DIR$/UniversityProjects/01-01/pr08" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniversityProjects/01/pr08.c" beforeDir="false" afterPath="$PROJECT_DIR$/UniversityProjects/01-01/pr08.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniversityProjects/01/pr09" beforeDir="false" afterPath="$PROJECT_DIR$/UniversityProjects/01-01/pr09" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniversityProjects/01/pr09.c" beforeDir="false" afterPath="$PROJECT_DIR$/UniversityProjects/01-01/pr09.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniversityProjects/01/pr10" beforeDir="false" afterPath="$PROJECT_DIR$/UniversityProjects/01-01/pr10" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniversityProjects/01/pr10.c" beforeDir="false" afterPath="$PROJECT_DIR$/UniversityProjects/01-01/pr10.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniversityProjects/01/pr11" beforeDir="false" afterPath="$PROJECT_DIR$/UniversityProjects/01-01/pr11" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniversityProjects/01/pr11.c" beforeDir="false" afterPath="$PROJECT_DIR$/UniversityProjects/01-01/pr11.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniversityProjects/01/pr12" beforeDir="false" afterPath="$PROJECT_DIR$/UniversityProjects/01-01/pr12" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniversityProjects/01/pr12.c" beforeDir="false" afterPath="$PROJECT_DIR$/UniversityProjects/01-01/pr12.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniversityProjects/01/pr13.c" beforeDir="false" afterPath="$PROJECT_DIR$/UniversityProjects/01-01/pr13.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniversityProjects/01/pr14.c" beforeDir="false" afterPath="$PROJECT_DIR$/UniversityProjects/01-01/pr14.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniversityProjects/01/pr15.c" beforeDir="false" afterPath="$PROJECT_DIR$/UniversityProjects/01-01/pr15.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniversityProjects/01/pr16.c" beforeDir="false" afterPath="$PROJECT_DIR$/UniversityProjects/01-01/pr16.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniversityProjects/01/pr17.c" beforeDir="false" afterPath="$PROJECT_DIR$/UniversityProjects/01-01/pr17.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniversityProjects/01/pr18.c" beforeDir="false" afterPath="$PROJECT_DIR$/UniversityProjects/01-01/pr18.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniversityProjects/01/pr20.c" beforeDir="false" afterPath="$PROJECT_DIR$/UniversityProjects/01-01/pr20.c" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,11 +60,20 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1R72Aj1S8q0tlEYFZqgxFsEjn85" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -67,6 +98,9 @@
       <option name="presentableId" value="Default" />
       <updated>1569003671209</updated>
       <workItem from="1569003672404" duration="698000" />
+      <workItem from="1569214589212" duration="4000" />
+      <workItem from="1569214599150" duration="1011000" />
+      <workItem from="1569215900632" duration="2207000" />
     </task>
     <servers />
   </component>
@@ -78,7 +112,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
