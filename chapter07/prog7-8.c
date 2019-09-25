@@ -1,17 +1,15 @@
 #include <stdio.h>
 
-float absoluteValue(float x) {
-	if (x < 0) {
-		x = -x;
-	}
-
-	return x;
-}
-
 float squereRoot(float x) {
 	const float epsilon = .000001;
 	float guess = 1.0;
+	float  absoluteValue(float x);
 	printf("\nguess = %f\n", guess);
+
+	if (x < 0) {
+		printf("Negative value to squereRoot\n");
+		return -1.0;
+	}
 
 	while (absoluteValue(guess * guess - x) >= epsilon) {
 		guess = (x / guess + guess) / 2.0;
@@ -21,6 +19,14 @@ float squereRoot(float x) {
 	printf("-----------------------");
 
 	return guess;
+}
+
+float absoluteValue(float x) {
+	if (x < 0) {
+		x = -x;
+	}
+
+	return x;
 }
 
 int main(void) {
