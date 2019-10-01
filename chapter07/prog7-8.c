@@ -1,7 +1,6 @@
 #include <stdio.h>
 
-float squereRoot(float x) {
-	const float epsilon = .000001;
+float squereRoot(float x, const float epsilon) {
 	float guess = 1.0;
 	float  absoluteValue(float x);
 	printf("\nguess = %f\n", guess);
@@ -11,7 +10,7 @@ float squereRoot(float x) {
 		return -1.0;
 	}
 
-	while (absoluteValue(guess * guess - x) >= epsilon) {
+	while (absoluteValue(guess / x) >= epsilon) {
 		guess = (x / guess + guess) / 2.0;
 		printf("guess = %f\n", guess);
 	}
@@ -30,9 +29,9 @@ float absoluteValue(float x) {
 }
 
 int main(void) {
-	printf("squereRoot(2.0) = %f\n", squereRoot(2.0));
-	printf("squereRoot(144.0) = %f\n", squereRoot(144.0));
-	printf("squereRoot(17.5) = %f\n", squereRoot(17.5));
+	printf("squereRoot(2.0) = %f\n", squereRoot(2.0, .000001));
+	printf("squereRoot(144.0) = %f\n", squereRoot(144.0, .0001));
+	printf("squereRoot(17.5) = %f\n", squereRoot(17.5, .001));
 
 	return 0;
 }
