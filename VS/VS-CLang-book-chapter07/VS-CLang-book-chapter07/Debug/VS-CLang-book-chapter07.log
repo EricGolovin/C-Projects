@@ -1,0 +1,46 @@
+﻿  main.c
+C:\Users\ericg\Developer\C-Projects\CLang-book-chapter07\CLang-book-chapter07\main.c(59,30): warning C4244:  'function': conversion from 'int' to 'float', possible loss of data
+C:\Users\ericg\Developer\C-Projects\CLang-book-chapter07\CLang-book-chapter07\main.c(148,18): warning C4013:  'displayMatrix' undefined; assuming extern returning int
+C:\Users\ericg\Developer\C-Projects\CLang-book-chapter07\CLang-book-chapter07\main.c(150,19): warning C4013:  'scalarMultiply' undefined; assuming extern returning int
+C:\Users\ericg\Developer\C-Projects\CLang-book-chapter07\CLang-book-chapter07\main.c(207,1): error C4996:  'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h(1274): message :  see declaration of 'scanf'
+C:\Users\ericg\Developer\C-Projects\CLang-book-chapter07\CLang-book-chapter07\main.c(218,1): error C4996:  'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  prog7-14.c
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h(1274): message :  see declaration of 'scanf'
+C:\Users\ericg\Developer\C-Projects\CLang-book-chapter07\CLang-book-chapter07\prog7-14.c(13,59): error C2057:  expected constant expression
+C:\Users\ericg\Developer\C-Projects\CLang-book-chapter07\CLang-book-chapter07\prog7-14.c(13,59): error C2466:  cannot allocate an array of constant size 0
+C:\Users\ericg\Developer\C-Projects\CLang-book-chapter07\CLang-book-chapter07\prog7-14.c(13,66): error C2057:  expected constant expression
+C:\Users\ericg\Developer\C-Projects\CLang-book-chapter07\CLang-book-chapter07\prog7-14.c(13,66): error C2466:  cannot allocate an array of constant size 0
+C:\Users\ericg\Developer\C-Projects\CLang-book-chapter07\CLang-book-chapter07\prog7-14.c(13,66): error C2087:  'matrix': missing subscript
+C:\Users\ericg\Developer\C-Projects\CLang-book-chapter07\CLang-book-chapter07\prog7-14.c(23,58): error C2057:  expected constant expression
+C:\Users\ericg\Developer\C-Projects\CLang-book-chapter07\CLang-book-chapter07\prog7-14.c(23,58): error C2466:  cannot allocate an array of constant size 0
+C:\Users\ericg\Developer\C-Projects\CLang-book-chapter07\CLang-book-chapter07\prog7-14.c(23,65): error C2057:  expected constant expression
+C:\Users\ericg\Developer\C-Projects\CLang-book-chapter07\CLang-book-chapter07\prog7-14.c(23,65): error C2466:  cannot allocate an array of constant size 0
+  prog7-15.c
+C:\Users\ericg\Developer\C-Projects\CLang-book-chapter07\CLang-book-chapter07\prog7-14.c(23,65): error C2087:  'matrix': missing subscript
+C:\Users\ericg\Developer\C-Projects\CLang-book-chapter07\CLang-book-chapter07\prog7-15.c(18,1): error C4996:  'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h(1274): message :  see declaration of 'scanf'
+C:\Users\ericg\Developer\C-Projects\CLang-book-chapter07\CLang-book-chapter07\prog7-15.c(21,1): error C4996:  'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  prog7-16.c
+  prog7-ex07.c
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h(1274): message :  see declaration of 'scanf'
+C:\Users\ericg\Developer\C-Projects\CLang-book-chapter07\CLang-book-chapter07\prog7-ex07.c(17,1): error C4996:  'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h(1274): message :  see declaration of 'scanf'
+C:\Users\ericg\Developer\C-Projects\CLang-book-chapter07\CLang-book-chapter07\prog7-ex07.c(21,1): error C4996:  'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  prog7-ex08.c
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h(1274): message :  see declaration of 'scanf'
+C:\Users\ericg\Developer\C-Projects\CLang-book-chapter07\CLang-book-chapter07\prog7-ex08.c(20,1): error C4996:  'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h(1274): message :  see declaration of 'scanf'
+C:\Users\ericg\Developer\C-Projects\CLang-book-chapter07\CLang-book-chapter07\prog7-ex08.c(24,1): error C4996:  'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h(1274): message :  see declaration of 'scanf'
+C:\Users\ericg\Developer\C-Projects\CLang-book-chapter07\CLang-book-chapter07\prog7-ex08.c(28,1): error C4996:  'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  prog7-ex09.c
+  prog7-ex12.c
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h(1274): message :  see declaration of 'scanf'
+C:\Users\ericg\Developer\C-Projects\CLang-book-chapter07\CLang-book-chapter07\prog7-ex12.c(14,33): error C2057:  expected constant expression
+C:\Users\ericg\Developer\C-Projects\CLang-book-chapter07\CLang-book-chapter07\prog7-ex12.c(14,33): error C2466:  cannot allocate an array of constant size 0
+C:\Users\ericg\Developer\C-Projects\CLang-book-chapter07\CLang-book-chapter07\prog7-ex12.c(14,47): error C2057:  expected constant expression
+C:\Users\ericg\Developer\C-Projects\CLang-book-chapter07\CLang-book-chapter07\prog7-ex12.c(14,47): error C2466:  cannot allocate an array of constant size 0
+C:\Users\ericg\Developer\C-Projects\CLang-book-chapter07\CLang-book-chapter07\prog7-ex12.c(14,47): error C2087:  'newArray': missing subscript
+  Generating Code...
+C:\Users\ericg\Developer\C-Projects\CLang-book-chapter07\CLang-book-chapter07\prog7-ex12.c(14,48): error C2133:  'newArray': unknown size
