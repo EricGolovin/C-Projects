@@ -14,11 +14,11 @@ long int x_to_the_n(void) {
     int n;
 
     printf("Please, enter x: ");
-    scanf("%li", &multiplier);
+    scanf_f("%li", &multiplier);
     x = 1;
 
     printf("Please, enter n: ");
-    scanf("%i", &n);
+    scanf_f("%i", &n);
 
     while (n > 0) {
         x *= multiplier;

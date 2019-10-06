@@ -17,15 +17,15 @@ void calcDiscriminant() {
         switch (i) {
         case 0:
             printf("a: ");
-            scanf("%lf", &valuesABC[0]);
+            scanf_f("%lf", &valuesABC[0]);
             break;
         case 1:
             printf("b: ");
-            scanf("%lf", &valuesABC[1]);
+            scanf_f("%lf", &valuesABC[1]);
             break;
         case 2:
             printf("c: ");
-            scanf("%lf", &valuesABC[2]);
+            scanf_f("%lf", &valuesABC[2]);
             break;
         default:
             break;

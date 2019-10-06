@@ -15,10 +15,10 @@ int digit = 0;
 
 void getTheNumberAndBase(void) {
     printf("Number to be converted? " );
-    scanf("%li", &numberToConvert);
+    scanf_f("%li", &numberToConvert);
 
     printf("Base? ");
-    scanf("%i", &base);
+    scanf_f("%i", &base);
 
     if (base < 2 || base > 16) {
         printf("Bad base - must be bwtween 2 and 16 (base was set to 10th)\n");

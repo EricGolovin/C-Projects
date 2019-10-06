@@ -141,10 +141,7 @@ void prog13(void) {
 }
 
 void prog14(void) {
-    void scalarMultiply(int nRows, int nCols, int matrix[nRows][nCols], int scalar);
-    void displayMatrix(int nRows, int nCols, int matrix[nRows][nCols]);
-
-
+ 
     int sampleMatrix[3][5] = {{7, 16, 55, 13, 12}, {12, 10, 52, 0, 7}, {-2, 1, 2, 4, 9}};
 
     printf("Original matrix: \n");
@@ -207,7 +204,7 @@ void prog_ex10(void) {
     
     int value;
     printf("Please, enter value to check for Prime: ");
-    scanf("%i", &value);
+    scanf_f("%i", &value);
 
     printf("%i is prime(1) or not prime(0) --> %i\n", value, checkForPrime(value));
 }
@@ -218,7 +215,7 @@ void prog_ex11(void) {
 
     for (int i = 0; i <= 9; i++) {
         printf("Value for userArray[%i]: ", i);
-        scanf("%i", &userArray[i]);
+        scanf_f("%i", &userArray[i]);
     }
 
     printf("Sum of all elements in userArray is %i\n", sumOfArray(userArray, 9));
