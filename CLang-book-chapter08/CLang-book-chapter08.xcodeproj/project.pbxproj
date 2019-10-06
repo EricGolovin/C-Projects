@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E994D5AC234A418E003DE139 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = E994D5AB234A418E003DE139 /* main.c */; };
+		E994D5B4234A6A71003DE139 /* prog04.c in Sources */ = {isa = PBXBuildFile; fileRef = E994D5B3234A6A71003DE139 /* prog04.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		E994D5A8234A418E003DE139 /* CLang-book-chapter08 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "CLang-book-chapter08"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E994D5AB234A418E003DE139 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		E994D5B2234A6A71003DE139 /* prog04.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = prog04.h; sourceTree = "<group>"; };
+		E994D5B3234A6A71003DE139 /* prog04.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = prog04.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				E994D5AB234A418E003DE139 /* main.c */,
+				E994D5B2234A6A71003DE139 /* prog04.h */,
+				E994D5B3234A6A71003DE139 /* prog04.c */,
 			);
 			path = "CLang-book-chapter08";
 			sourceTree = "<group>";
@@ -120,6 +125,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E994D5AC234A418E003DE139 /* main.c in Sources */,
+				E994D5B4234A6A71003DE139 /* prog04.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
