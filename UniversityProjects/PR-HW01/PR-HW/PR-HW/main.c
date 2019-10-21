@@ -1,12 +1,12 @@
 //
-//  BubbleSort.c
-//  LabTA01
+//  main.c
+//  PR-HW
 //
-//  Created by Eric Golovin on 10/15/19.
-//  Copyright © 2019 EricGolovin. All rights reserved.
+//  Created by Eric Golovin on 10/21/19.
+//  Copyright © 2019 Eric Golovin. All rights reserved.
 //
 
-#include "BubbleSort.h"
+#include <stdio.h>
 
 void swap(int *xp, int *yp) {
     int temp = *xp;
@@ -26,8 +26,17 @@ void bubbleSort(int arr[], int n) {
 
 void printArray(int arr[], int size) {
     for (int i = 0; i < size; i++) {
-        printf("%d ", arr[i]);
+        printf("%i ", arr[i]);
     }
     printf("\n");
 }
 
+int main(int argc, const char * argv[]) {
+    int array[6] = { 1, -4, 3, 9, -8, 7 };
+    
+    bubbleSort(array, 6);
+    
+    printArray(array, 6);
+    
+    return 0;
+}
