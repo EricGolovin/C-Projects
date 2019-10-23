@@ -10,7 +10,7 @@
 #include <string.h>
 
 int main(int argc, const char * argv[]) {
-    char sentence[81] = "Today I saw an incredible house of my friends"; // shoule chage my to ours
+    char sentence[81] = "Today I saw an incredible house of my friends"; // should change my to ours
     char resultArray[81];
     char terminator[2] = " ";
     char *token;
