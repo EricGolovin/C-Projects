@@ -11,27 +11,19 @@
 using namespace std;
 
 int implication(int a, int b) {
-    if (a == b) {
-        return 1;
-    } else if (a > b) {
-        return 0;
-    } else if (a < b) {
-        return 1;
-    } else {
-        return NULL;
-    }
+    return (!a || b);
 }
 
 int main(int argc, const char * argv[]) {
     int a, b, c, d;
-
+    
     printf("|a|\t|b|\t|c|\t|d|\n");
-
+    
     for (a = 0; a <= 1; a++) {
         for (b = 0; b <= 1; b++) {
-            for (c = 0; c <= 1; c++) {
+            for (c = 0; c <= 1; c++)  {
                 for (d = 0; d <= 1; d++) {
-                    printf("|%i|\t|%i|\t|%i|\t|%i|\t\t|%i|\n", a, b, c, d, implication(a && b && !d && c, ((a && !c) && (!a && b && d)) && !(a && c && d)));
+                    printf("|%i|\t|%i|\t|%i|\t|%i|\t|%i|\t\n", a, b, c, d, (a && !b && c) || implication( (!c && b) || !(a && d) , (a && !b) ));
                 }
             }
         }
