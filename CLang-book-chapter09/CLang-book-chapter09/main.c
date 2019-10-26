@@ -12,6 +12,7 @@
 #include "prog9-02.h"
 #include "prog9-04.h"
 #include "prog9-06.h"
+#include "prog9-07.h"
 
 void prog01() {
     printf("\tProg01\t\n");
@@ -91,11 +92,26 @@ void prog06() {
     printf("\n");
 }
 
+void prog07() {
+    printf("\tProg07\t\n");
+    printf("--------------\n");
+    int countWords(const char string[]);
+    
+    const char text1[] = "Well, here goes.";
+    const char text2[] = "And here we go... again.";
+    
+    printf("%s - words = %i\n", text1, countWords(text1));
+    printf("%s - words - %i\n", text2, countWords(text2));
+    printf("\n");
+}
+
 int main(int argc, const char * argv[]) {
     prog01();
     prog02();
     prog03();
 //    prog05();
 //    prog06();
+    prog07();
+    
     return 0;
 }

@@ -12,6 +12,7 @@
 		E949C70D236486900061C5EC /* prog9-02.c in Sources */ = {isa = PBXBuildFile; fileRef = E949C70C236486900061C5EC /* prog9-02.c */; };
 		E949C71323648B780061C5EC /* prog9-04.c in Sources */ = {isa = PBXBuildFile; fileRef = E949C71223648B780061C5EC /* prog9-04.c */; };
 		E949C71623648EBF0061C5EC /* prog9-06.c in Sources */ = {isa = PBXBuildFile; fileRef = E949C71523648EBF0061C5EC /* prog9-06.c */; };
+		E949C71923649ABA0061C5EC /* prog9-07.c in Sources */ = {isa = PBXBuildFile; fileRef = E949C71823649ABA0061C5EC /* prog9-07.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +38,8 @@
 		E949C71223648B780061C5EC /* prog9-04.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "prog9-04.c"; sourceTree = "<group>"; };
 		E949C71423648EBF0061C5EC /* prog9-06.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "prog9-06.h"; sourceTree = "<group>"; };
 		E949C71523648EBF0061C5EC /* prog9-06.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "prog9-06.c"; sourceTree = "<group>"; };
+		E949C71723649ABA0061C5EC /* prog9-07.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "prog9-07.h"; sourceTree = "<group>"; };
+		E949C71823649ABA0061C5EC /* prog9-07.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "prog9-07.c"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +81,8 @@
 				E949C71223648B780061C5EC /* prog9-04.c */,
 				E949C71423648EBF0061C5EC /* prog9-06.h */,
 				E949C71523648EBF0061C5EC /* prog9-06.c */,
+				E949C71723649ABA0061C5EC /* prog9-07.h */,
+				E949C71823649ABA0061C5EC /* prog9-07.c */,
 			);
 			path = "CLang-book-chapter09";
 			sourceTree = "<group>";
@@ -141,6 +146,7 @@
 			files = (
 				E949C70A236484450061C5EC /* prog9-01.c in Sources */,
 				E949C71323648B780061C5EC /* prog9-04.c in Sources */,
+				E949C71923649ABA0061C5EC /* prog9-07.c in Sources */,
 				E949C71623648EBF0061C5EC /* prog9-06.c in Sources */,
 				E949C70D236486900061C5EC /* prog9-02.c in Sources */,
 				E949C702236484000061C5EC /* main.c in Sources */,
