@@ -1,0 +1,3 @@
+﻿  PR-Lab05.cpp
+C:\Users\ericg\source\repos\C-Projects\UniversityProjects\PR-Lab05\PR-Lab05\PR-Lab05.cpp(21,15): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+  PR-Lab05.vcxproj -> C:\Users\ericg\source\repos\C-Projects\UniversityProjects\PR-Lab05\Debug\PR-Lab05.exe
