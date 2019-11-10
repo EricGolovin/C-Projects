@@ -1,7 +1,9 @@
 // PR-Lab05.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
+//
 
 #include <iostream>
+#include <math.h>
 
 int arithmeticalMean(int array[], int n) {
     int sumArray = 0;
