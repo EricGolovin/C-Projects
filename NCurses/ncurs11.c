@@ -16,7 +16,7 @@ int main(void) {
     return (1);
   }
   waddstr(two, "This is the new window created!\n");
-  
+  wrefresh(two);
   getch();
   endwin();
 
