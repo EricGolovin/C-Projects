@@ -1,5 +1,8 @@
 # Prerequisites
 *.d
+*.idea
+*.vs
+*.vscode
 
 # Object files
 *.o
