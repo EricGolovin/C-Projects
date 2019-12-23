@@ -26,13 +26,15 @@ int main(int argc, char *argv[])
             stringNum[index] = buffChar;
             index++;
         }
-        if (isspace(buffChar)) {
+        if (isspace(buffChar))
+        {
             if (sizeSwitcher)
             {
                 rows = atoi(stringNum);
                 sizeSwitcher = false;
                 int i = 0;
-                while (index != 0) {
+                while (index != 0)
+                {
                     stringNum[index] = '\0';
                     index--;
                 }
@@ -41,14 +43,14 @@ int main(int argc, char *argv[])
             else
             {
                 columns = atoi(stringNum);
-                while (index != 0) {
+                while (index != 0)
+                {
                     stringNum[index] = '\0';
                     index--;
                 }
                 stringNum[index] = '\0';
                 break;
             }
-            
         }
     }
     printf(" -> \n");
@@ -68,8 +70,9 @@ int main(int argc, char *argv[])
         {
             newArray[rowIndex][columnIndex] = atoi(stringNum);
             printf("newArray[%i][%i] = %s\n", rowIndex, columnIndex, stringNum);
-            
-            while (index != 0) {
+
+            while (index != 0)
+            {
                 stringNum[index] = '\0';
                 index--;
             }
@@ -109,25 +112,85 @@ int main(int argc, char *argv[])
     int nonNegColSum = 0;
     int exceptionalArray[columns];
 
-    for (int i = 0; i < columns; i++) {
+    int principalDiagonalSum = 0;
+    int secondaryDiagonalSum = 0;
+
+    for (int i = 0; i < columns; i++)
+    {
         exceptionalArray[i] = 0;
     }
 
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < columns; j++) {
-            if (newArray[i][j] < 0) {
+    for (int i = 0, index = 0; i < rows; i++)
+    {
+        for (int j = 0; j < columns; j++)
+        {
+            if (newArray[i][j] < 0)
+            {
                 exceptionalArray[j] = 1;
-                for (int g = i - 1; g >= 0; g--) {
+                for (int g = i - 1; g >= 0; g--)
+                {
                     nonNegColSum -= newArray[i][g];
                 }
             }
-            if (exceptionalArray[j] == 0) {
+            if (exceptionalArray[j] == 0)
+            {
                 nonNegColSum += newArray[i][j];
             }
         }
     }
 
+    int sumDiagonals[columns + 1];
+    for (int i = 0; i < columns + 1; i++)
+    {
+        sumDiagonals[i] = 0;
+    }
+    for (int counter = 0, index = rows - 1; counter <= columns; counter++, index--)
+    {
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < columns; j++)
+            {
+                if (index == 0)
+                {
+                    index = -1;
+                }
+                if ((i + j + index) == (columns - 1))
+                {
+                    printf("addedSecon = %i newArray[%i][%i]\n", newArray[i][j], i, j);
+                    if (newArray[i][j] < 0)
+                    {
+                        sumDiagonals[counter] += -newArray[i][j];
+                    }
+                    else
+                    {
+                        sumDiagonals[counter] += newArray[i][j];
+                    }
+                    printf("sumDiagonal[%i] = %i\n", counter, newArray[i][j]);
+                }
+            }
+        }
+    }
+    printf("\n");
+
+    int diagonalMin = 0;
+    for (int i = 0; i < columns + 1; i++)
+    {
+        if (diagonalMin < sumDiagonals[i])
+        {
+            printf("diagonalMin = %i sumDiagonal[%i] = %i\n", diagonalMin, i, sumDiagonals[i]);
+            diagonalMin = sumDiagonals[i];
+        }
+    }
+
+    for (int i = 0; i < columns + 1; i++)
+    {
+        printf("sumDiagonals[%i] = %i\n", i, sumDiagonals[i]);
+
+    }
+
+    printf("diagonalMin = %i\n", diagonalMin);
     printf("\nnonNegSum = %i\n", nonNegColSum);
+    printf("\nsecondaryDiagonalSum = %i\n", secondaryDiagonalSum);
 
     return 0;
 }
