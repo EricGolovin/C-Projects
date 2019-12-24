@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-void mx_printint(int n, int *file) {
+void mx_writeint(int n, int *file) {
 	int num = n;
 	int number;
 	int index = 0;
@@ -249,18 +249,52 @@ int main(int argc, char *argv[])
         printf("sumDiagonals[%i] = %i\n", i, sumDiagonals[i]);
     }
 
-    // writing data to the file  
+    // writing data to the txt file  
 
     write(newFile, "diagonalMin = ", sizeof("diagonalMin = "));
-    mx_printint(diagonalMin, &newFile); 
+    mx_writeint(diagonalMin, &newFile); 
     write(newFile, "\n", 2);
     write(newFile, "nonNegSum = ", sizeof("nonNegSum = "));
-    mx_printint(nonNegColSum, &newFile);
+    mx_writeint(nonNegColSum, &newFile);
     write(newFile, "\n", sizeof("\n"));
 
     printf("diagonalMin = %i\n", diagonalMin);
     printf("\nnonNegSum = %i\n", nonNegColSum);
-   
+
+   // close(newFile);
+    // writing data to the bin file
+
+
+
+   // int newFile2 = open("outData.txt", O_RDWR);
+    newFile = open("outData.txt", O_RDWR);
+
+    index = 1;
+    while (read(newFile, &buffChar, 1)) {
+	    index++;
+        printf("%i\n", index);
+    }
+    close(newFile);
+
+    newFile = open("outData.txt", O_RDWR);
+    char binCh[index + 1];
+    
+    int binChSize = index;
+    index = 0;
+    char ch[10];
+
+
+    while (read(newFile, &buffChar, 1)) {
+    	binCh[index] = buffChar;
+	    index++;
+    }
+
+    int bFile = creat("outData.bin", O_RDWR);
+    FILE *binFile = fopen("outData.bin", "wb"); 
+
+    fwrite(binCh, sizeof(binCh), 1, binFile);
+    fclose(binFile);
+    close(newFile);
 
     return 0;
 }
