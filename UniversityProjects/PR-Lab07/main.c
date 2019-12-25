@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-void mx_writeint(int n, int *file) {
+void mx_writeint(int n, FILE *file) {
 	int num = n;
 	int number;
 	int index = 0;
@@ -32,7 +32,7 @@ void mx_writeint(int n, int *file) {
 
 	for (i = index - 1; i >= 0; --i) {
 		char numCh = array[i] + '0';
-		write(*file, &numCh, sizeof(numCh));
+        fwrite(&numCh, 1, sizeof(numCh), file);
 	}
 }
 
@@ -43,7 +43,9 @@ int main(int argc, char *argv[])
     char stringNum[32];
     int index = 0;
 
-    int newFile = creat("outData.txt", O_RDWR);
+    FILE *newFile = fopen("outData.txt", "w");
+    FILE *binFile = fopen("outBin.bin", "wb");
+
     int columns = 0;
     int rows = 0;
 
@@ -51,7 +53,9 @@ int main(int argc, char *argv[])
 
     while (read(openedFile, &buffChar, 1))
     {
-	write(newFile, &buffChar, sizeof(buffChar));
+
+	    fwrite(&buffChar, 1, sizeof(buffChar), newFile);
+        fwrite(&buffChar, 1, sizeof(buffChar), binFile);
         if (isdigit(buffChar))
         {
             stringNum[index] = buffChar;
@@ -84,7 +88,8 @@ int main(int argc, char *argv[])
             }
         }
     }
-    write (newFile, " -> \n", sizeof(" -> \n"));
+    fwrite(" -> \n", 1, sizeof(" -> \n"), newFile);
+    fwrite(" -> \n", 1, sizeof(" -> \n"), binFile);
 
     int newArray[rows][columns];
     int rowIndex = 0;
@@ -100,15 +105,22 @@ int main(int argc, char *argv[])
         if (isspace(buffChar) && stringNum[0] != '\0')
         {
             newArray[rowIndex][columnIndex] = atoi(stringNum);
-	    write(newFile, "newArray[", sizeof("newArray["));
-	    char rowIndexCh = rowIndex + '0';
-	    write(newFile, &rowIndexCh, sizeof(rowIndexCh));
-	    write(newFile, "][", sizeof("]["));
+	    fwrite("newArray[", 1, sizeof("newArray["), newFile);
+	    fwrite("newArray[", 1, sizeof("newArray["), binFile);
+        char rowIndexCh = rowIndex + '0';
+        fwrite(&rowIndexCh, 1, sizeof(rowIndexCh), newFile);
+	    fwrite(&rowIndexCh, 1, sizeof(rowIndexCh), binFile);
+        fwrite("][", 1, sizeof("]["), newFile);
+        fwrite("][", 1, sizeof("]["), binFile);
 	    char columnIndexCh = columnIndex + '0';
-	    write(newFile, &columnIndexCh, sizeof(columnIndexCh));
-	    write(newFile, "] = ", sizeof("] = "));
-	    write(newFile, stringNum, sizeof(stringNum));
-	    write(newFile, "\n", sizeof("\n"));
+        fwrite(&columnIndexCh, 1, sizeof(columnIndexCh), newFile);
+	    fwrite(&columnIndexCh, 1, sizeof(columnIndexCh), binFile);
+        fwrite("] = ", 1, sizeof("] = "), newFile);
+        fwrite("] = ", 1, sizeof("] = "), binFile);
+        fwrite(stringNum, 1, sizeof(stringNum), newFile);
+        fwrite(stringNum, 1, sizeof(stringNum), binFile);
+	    fwrite("\n", 1, sizeof("\n"), newFile);
+        fwrite("\n", 1, sizeof("\n"), binFile);
             printf("newArray[%i][%i] = %s\n", rowIndex, columnIndex, stringNum);
 
             while (index != 0)
@@ -130,19 +142,25 @@ int main(int argc, char *argv[])
         }
     }
 
-    write(newFile, "\nrows = ", sizeof("\nrows = "));
+    fwrite("\nrows = ", 1, sizeof("\nrows = "), newFile);
+    fwrite("\nrows = ", 1, sizeof("\nrows = "), binFile);
     char rowsCh = rows + '0';
-    write(newFile, &rowsCh, sizeof(rowsCh));
+    fwrite(&rowsCh, 1, sizeof(rowsCh), newFile);
+    fwrite(&rowsCh, 1, sizeof(rowsCh), binFile);
 
-    write(newFile, "\ncolumns = ", sizeof("\ncolumns = "));
+    fwrite("\ncolumns = ", 1, sizeof("\ncolumns = "), newFile);
+    fwrite("\ncolumns = ", 1, sizeof("\ncolumns = "), binFile);
     char columnsCh = columns + '0';
-    write(newFile, &columnsCh, sizeof(columnsCh));
-    write(newFile, "\n", sizeof("\n"));
+    fwrite(&columnsCh, 1, sizeof(columnsCh), newFile);
+    fwrite(&columnsCh, 1, sizeof(columnsCh), binFile);
+    fwrite("\n", 1, sizeof("\n"), newFile);
+    fwrite("\n", 1, sizeof("\n"), binFile);
 
     printf("\nrows = %i", rows);
     printf("\ncolumns = %i", columns);
 
-    write(newFile, "\nNew Array:\n", sizeof("\nNew Array:\n"));
+    fwrite("\nNew Array:\n", 1, sizeof("\nNew Array:\n"), newFile);
+    fwrite("\nNew Array:\n", 1, sizeof("\nNew Array:\n"), binFile);
 
     printf("\nNew Array:\n");
 
@@ -156,12 +174,15 @@ int main(int argc, char *argv[])
 		} else {
 			nArrayIndexCh = newArray[i][j] + '0';
 		}
-		write(newFile, &nArrayIndexCh, sizeof(nArrayIndexCh));
-		write(newFile, " ", sizeof(" "));
+        fwrite(&nArrayIndexCh, 1, sizeof(nArrayIndexCh), newFile);
+        fwrite(&nArrayIndexCh, 1, sizeof(nArrayIndexCh), binFile);
+        fwrite(" ", 1, sizeof(" "), binFile);
 		printf("%i ", newArray[i][j]);
 
         }
-	write(newFile, "\n", sizeof("\n"));
+        fwrite("\n", 1, sizeof("\n"), newFile);
+        fwrite("\n", 1, sizeof("\n"), binFile);
+
         printf("\n");
     }
 
@@ -250,51 +271,22 @@ int main(int argc, char *argv[])
     }
 
     // writing data to the txt file  
-
-    write(newFile, "diagonalMin = ", sizeof("diagonalMin = "));
-    mx_writeint(diagonalMin, &newFile); 
-    write(newFile, "\n", 2);
-    write(newFile, "nonNegSum = ", sizeof("nonNegSum = "));
-    mx_writeint(nonNegColSum, &newFile);
-    write(newFile, "\n", sizeof("\n"));
+    fwrite("diagonalMin = ", 1, sizeof("diagonalMin = "), newFile);
+    fwrite("diagonalMin = ", 1, sizeof("diagonalMin = "), binFile);
+    mx_writeint(diagonalMin, newFile); 
+    mx_writeint(diagonalMin, binFile); 
+    fwrite("\nnonNegSum = ", 1, sizeof("\nnonNegSum = "), newFile);
+    fwrite("\nnonNegSum = ", 1, sizeof("\nnonNegSum = "), binFile);
+    mx_writeint(diagonalMin, newFile); 
+    mx_writeint(diagonalMin, binFile); 
+    fwrite("\n", 1, sizeof("\n"), newFile);
+    fwrite("\n", 1, sizeof("\n"), binFile);
 
     printf("diagonalMin = %i\n", diagonalMin);
     printf("\nnonNegSum = %i\n", nonNegColSum);
 
-   // close(newFile);
-    // writing data to the bin file
-
-
-
-   // int newFile2 = open("outData.txt", O_RDWR);
-    newFile = open("outData.txt", O_RDWR);
-
-    index = 1;
-    while (read(newFile, &buffChar, 1)) {
-	    index++;
-        printf("%i\n", index);
-    }
-    close(newFile);
-
-    newFile = open("outData.txt", O_RDWR);
-    char binCh[index + 1];
-    
-    int binChSize = index;
-    index = 0;
-    char ch[10];
-
-
-    while (read(newFile, &buffChar, 1)) {
-    	binCh[index] = buffChar;
-	    index++;
-    }
-
-    int bFile = creat("outData.bin", O_RDWR);
-    FILE *binFile = fopen("outData.bin", "wb"); 
-
-    fwrite(binCh, sizeof(binCh), 1, binFile);
+    fclose(newFile);
     fclose(binFile);
-    close(newFile);
-
+    
     return 0;
 }
