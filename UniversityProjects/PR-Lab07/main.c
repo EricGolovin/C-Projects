@@ -1,60 +1,58 @@
 #include <stdio.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <ctype.h>
+#include <ctype.h> // isdigit
 #include <stdbool.h>
-#include <stdlib.h>
-#include <string.h>
+#include <stdlib.h> // atoi
 
-void mx_writeint(int n, FILE *file) {
-	int num = n;
-	int number;
-	int index = 0;
+void mx_writeint(int n, FILE *file)
+{
+    int num = n;
+    int number;
+    int index = 0;
 
-	while (num > 0)
-        {
-		number = num % 10;
-		++index;
-		num /= 10;
-        }
+    while (num > 0)
+    {
+        number = num % 10;
+        ++index;
+        num /= 10;
+    }
 
-	num = n;
-	int array[index];
-	int i = 0;
+    num = n;
+    int array[index];
+    int i = 0;
 
-	while (num > 0)
-        {
-                number = num % 10;
-                array[i] = number;
-		i++;
-                num /= 10;
-        }
+    while (num > 0)
+    {
+        number = num % 10;
+        array[i] = number;
+        i++;
+        num /= 10;
+    }
 
-	for (i = index - 1; i >= 0; --i) {
-		char numCh = array[i] + '0';
+    for (i = index - 1; i >= 0; --i)
+    {
+        char numCh = array[i] + '0';
         fwrite(&numCh, 1, sizeof(numCh), file);
-	}
+    }
 }
 
 int main(int argc, char *argv[])
 {
-    int openedFile = open(argv[1], O_RDWR);
-    char buffChar = ' ';
-    char stringNum[32];
-    int index = 0;
-
+    FILE *openedFile = fopen(argv[1], "r");
     FILE *newFile = fopen("outData.txt", "w");
     FILE *binFile = fopen("outBin.bin", "wb");
 
+    char buffChar = ' ';
+    char stringNum[32];
+
+    int index = 0;
     int columns = 0;
     int rows = 0;
 
     bool sizeSwitcher = true;
 
-    while (read(openedFile, &buffChar, 1))
+    while ((buffChar = fgetc(openedFile)) != EOF)
     {
-
-	    fwrite(&buffChar, 1, sizeof(buffChar), newFile);
+        fwrite(&buffChar, 1, sizeof(buffChar), newFile);
         fwrite(&buffChar, 1, sizeof(buffChar), binFile);
         if (isdigit(buffChar))
         {
@@ -95,7 +93,7 @@ int main(int argc, char *argv[])
     int rowIndex = 0;
     int columnIndex = 0;
 
-    while (read(openedFile, &buffChar, 1))
+    while ((buffChar = fgetc(openedFile)) != EOF)
     {
         if (isdigit(buffChar) || buffChar == '-')
         {
@@ -105,22 +103,22 @@ int main(int argc, char *argv[])
         if (isspace(buffChar) && stringNum[0] != '\0')
         {
             newArray[rowIndex][columnIndex] = atoi(stringNum);
-	    fwrite("newArray[", 1, sizeof("newArray["), newFile);
-	    fwrite("newArray[", 1, sizeof("newArray["), binFile);
-        char rowIndexCh = rowIndex + '0';
-        fwrite(&rowIndexCh, 1, sizeof(rowIndexCh), newFile);
-	    fwrite(&rowIndexCh, 1, sizeof(rowIndexCh), binFile);
-        fwrite("][", 1, sizeof("]["), newFile);
-        fwrite("][", 1, sizeof("]["), binFile);
-	    char columnIndexCh = columnIndex + '0';
-        fwrite(&columnIndexCh, 1, sizeof(columnIndexCh), newFile);
-	    fwrite(&columnIndexCh, 1, sizeof(columnIndexCh), binFile);
-        fwrite("] = ", 1, sizeof("] = "), newFile);
-        fwrite("] = ", 1, sizeof("] = "), binFile);
-        fwrite(stringNum, 1, sizeof(stringNum), newFile);
-        fwrite(stringNum, 1, sizeof(stringNum), binFile);
-	    fwrite("\n", 1, sizeof("\n"), newFile);
-        fwrite("\n", 1, sizeof("\n"), binFile);
+            fwrite("newArray[", 1, sizeof("newArray["), newFile);
+            fwrite("newArray[", 1, sizeof("newArray["), binFile);
+            char rowIndexCh = rowIndex + '0';
+            fwrite(&rowIndexCh, 1, sizeof(rowIndexCh), newFile);
+            fwrite(&rowIndexCh, 1, sizeof(rowIndexCh), binFile);
+            fwrite("][", 1, sizeof("]["), newFile);
+            fwrite("][", 1, sizeof("]["), binFile);
+            char columnIndexCh = columnIndex + '0';
+            fwrite(&columnIndexCh, 1, sizeof(columnIndexCh), newFile);
+            fwrite(&columnIndexCh, 1, sizeof(columnIndexCh), binFile);
+            fwrite("] = ", 1, sizeof("] = "), newFile);
+            fwrite("] = ", 1, sizeof("] = "), binFile);
+            fwrite(stringNum, 1, sizeof(stringNum), newFile);
+            fwrite(stringNum, 1, sizeof(stringNum), binFile);
+            fwrite("\n", 1, sizeof("\n"), newFile);
+            fwrite("\n", 1, sizeof("\n"), binFile);
             printf("newArray[%i][%i] = %s\n", rowIndex, columnIndex, stringNum);
 
             while (index != 0)
@@ -168,17 +166,20 @@ int main(int argc, char *argv[])
     {
         for (int j = 0; j < columns; j++)
         {
-		char nArrayIndexCh;
-		if (newArray[i][j] < 0) {
-			nArrayIndexCh = -newArray[i][j] + '0';
-		} else {
-			nArrayIndexCh = newArray[i][j] + '0';
-		}
-        fwrite(&nArrayIndexCh, 1, sizeof(nArrayIndexCh), newFile);
-        fwrite(&nArrayIndexCh, 1, sizeof(nArrayIndexCh), binFile);
-        fwrite(" ", 1, sizeof(" "), binFile);
-		printf("%i ", newArray[i][j]);
-
+            char nArrayIndexCh;
+            if (newArray[i][j] < 0)
+            {
+                nArrayIndexCh = -newArray[i][j] + '0';
+            }
+            else
+            {
+                nArrayIndexCh = newArray[i][j] + '0';
+            }
+            fwrite(&nArrayIndexCh, 1, sizeof(nArrayIndexCh), newFile);
+            fwrite(&nArrayIndexCh, 1, sizeof(nArrayIndexCh), binFile);
+            fwrite(" ", 1, sizeof(" "), newFile);
+            fwrite(" ", 1, sizeof(" "), binFile);
+            printf("%i ", newArray[i][j]);
         }
         fwrite("\n", 1, sizeof("\n"), newFile);
         fwrite("\n", 1, sizeof("\n"), binFile);
@@ -186,10 +187,10 @@ int main(int argc, char *argv[])
         printf("\n");
     }
 
-    close(openedFile); 
-    
+    fclose(openedFile);
+
     // finding sum of columns with no negative elements
-    
+
     int nonNegColSum = 0;
     int exceptionalArray[columns];
 
@@ -221,12 +222,14 @@ int main(int argc, char *argv[])
     }
 
     // finding the sum of all diagonnals parallel to the secondary diagonal
-    
+
     int sumDiagonals[columns + 1];
+
     for (int i = 0; i < columns + 1; i++)
     {
         sumDiagonals[i] = 0;
     }
+
     for (int counter = 0, index = rows - 1; counter <= columns; counter++, index--)
     {
         for (int i = 0; i < rows; i++)
@@ -246,7 +249,7 @@ int main(int argc, char *argv[])
                     }
                     else
                     {
-                    	sumDiagonals[counter] += newArray[i][j];
+                        sumDiagonals[counter] += newArray[i][j];
                     }
                     printf("sumDiagonal[%i] = %i\n", counter, newArray[i][j]);
                 }
@@ -270,15 +273,16 @@ int main(int argc, char *argv[])
         printf("sumDiagonals[%i] = %i\n", i, sumDiagonals[i]);
     }
 
-    // writing data to the txt file  
+    // writing answers to the txt and bin file
+
     fwrite("diagonalMin = ", 1, sizeof("diagonalMin = "), newFile);
     fwrite("diagonalMin = ", 1, sizeof("diagonalMin = "), binFile);
-    mx_writeint(diagonalMin, newFile); 
-    mx_writeint(diagonalMin, binFile); 
+    mx_writeint(diagonalMin, newFile);
+    mx_writeint(diagonalMin, binFile);
     fwrite("\nnonNegSum = ", 1, sizeof("\nnonNegSum = "), newFile);
     fwrite("\nnonNegSum = ", 1, sizeof("\nnonNegSum = "), binFile);
-    mx_writeint(diagonalMin, newFile); 
-    mx_writeint(diagonalMin, binFile); 
+    mx_writeint(diagonalMin, newFile);
+    mx_writeint(diagonalMin, binFile);
     fwrite("\n", 1, sizeof("\n"), newFile);
     fwrite("\n", 1, sizeof("\n"), binFile);
 
@@ -287,6 +291,6 @@ int main(int argc, char *argv[])
 
     fclose(newFile);
     fclose(binFile);
-    
+
     return 0;
 }
