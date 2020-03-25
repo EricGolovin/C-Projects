@@ -29,7 +29,7 @@ void add_edgeIncidence(int u, int v) { //function to add edge into the matrix wi
 }
 
 void printIncidenceMatrix() {
-    int v = 10; //there are 6 vertices in the graph
+    int v = 22; //there are 6 vertices in the graph
     int e = 9; //there are 9 edges in the graph
     add_edgeIncidence(1, 1);
     add_edgeIncidence(1, 2);
