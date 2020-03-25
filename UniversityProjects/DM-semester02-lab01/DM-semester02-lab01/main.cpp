@@ -50,7 +50,7 @@ int main() {
     
     int adjacencyMatrix[9][9] = { 0 };
     int incidenceMatrix[9][28] = { 0 };
-    int dostezhMatrix[9][9] = { 0 };
+    int rechabilityMatrix[9][9] = { 0 };
     
     for (int i = 0; i < 28; ++i) {
         adjacencyMatrix[g[i].x - 1][g[i].y - 1] = 1;
@@ -88,12 +88,12 @@ int main() {
     
     cout << "\nМатрица достижимости\n";
     
-    adjacency(adjacencyMatrix, dostezhMatrix);
+    adjacency(adjacencyMatrix, rechabilityMatrix);
     
     for (int i = 0; i < 9; ++i, cout << '\n') {
         for (int j = 0; j < 9; ++j) {
             cout.width(3);
-            cout << dostezhMatrix[i][j] << ' ';
+            cout << rechabilityMatrix[i][j] << ' ';
         }
     }
     
