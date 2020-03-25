@@ -27,12 +27,12 @@ void add_edge(int u, int v) {       // function to add edge into the matrix
     vertArr[v][u] = 1;
 }
 
-
+1,1;1,2;1,3;1,5;2,1;2,3;2,4;2,9;3,1;3,3;3,4;3,6;4,1;4,2;4,4;5,1;5,3;6,1;6,2;6,3;6,4;6,6;7,3;7,6;9,1;9,2;9,5;9,9.
 
 int main(int argc, char* argv[]) {
-    int v = 6;    //there are 6 vertices in the graph
-    add_edge(0, 4);
-    add_edge(0, 3);
+    int v = 9;    //there are 9 vertices in the graph
+    add_edge(1, 1);
+    add_edge(1, 2);
     add_edge(1, 2);
     add_edge(1, 4);
     add_edge(1, 5);
