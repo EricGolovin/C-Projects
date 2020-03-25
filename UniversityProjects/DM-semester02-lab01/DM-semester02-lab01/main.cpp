@@ -48,12 +48,12 @@ int main() {
     
     Graph g[28] = {{1, 1}, {1, 2}, {1, 3}, {1, 5}, {2, 1}, {2, 3}, {2, 4}, {2, 9}, {3, 1}, {3, 3}, {3, 4}, {3, 6}, {4, 1}, {4, 2}, {4, 4}, {5, 1}, {5, 3}, {6, 1}, {6, 2}, {6, 3}, {6, 4}, {6, 6}, {7, 3}, {7, 6}, {9, 1}, {9, 2}, {9, 5}, {9, 9}};
     
-    int smezhn[9][9] = { 0 };
-    int intsed[9][28] = { 0 };
-    int dostezh[9][9] = { 0 };
+    int adjacencyMatrix[9][9] = { 0 };
+    int incidenceMatrix[9][28] = { 0 };
+    int dostezhMatrix[9][9] = { 0 };
     
     for (int i = 0; i < 28; ++i) {
-        smezhn[g[i].x - 1][g[i].y - 1] = 1;
+        adjacencyMatrix[g[i].x - 1][g[i].y - 1] = 1;
     }
     
     cout << "Матрица смежности:" << endl;
@@ -61,17 +61,17 @@ int main() {
     for (int i = 0; i < 9; ++i, cout << '\n') {
         for (int j = 0; j < 9; ++j) {
             cout.width(3);
-            cout << smezhn[i][j] << ' ';
+            cout << adjacencyMatrix[i][j] << ' ';
         }
     }
     
     for (int i = 0; i < 28; ++i) {
-        intsed[g[i].x - 1][i] = 1;
-        intsed[g[i].y - 1][i] = -1;
+        incidenceMatrix[g[i].x - 1][i] = 1;
+        incidenceMatrix[g[i].y - 1][i] = -1;
         
         if (g[i].x - 1 == g[i].y - 1) {
-            intsed[g[i].x - 1][i] = 2;
-            intsed[g[i].y - 1][i] = 2;
+            incidenceMatrix[g[i].x - 1][i] = 2;
+            incidenceMatrix[g[i].y - 1][i] = 2;
         }
     }
     
@@ -81,19 +81,19 @@ int main() {
     for (int i = 0; i < 9; ++i, cout << '\n') {
         for (int j = 0; j < 28; ++j) {
             cout.width(2);
-            cout << intsed[i][j];
+            cout << incidenceMatrix[i][j];
         }
     }
     
     
     cout << "\nМатрица достижимости\n";
     
-    adjacency(smezhn,dostezh);
+    adjacency(adjacencyMatrix, dostezhMatrix);
     
     for (int i = 0; i < 9; ++i, cout << '\n') {
         for (int j = 0; j < 9; ++j) {
             cout.width(3);
-            cout << dostezh[i][j] << ' ';
+            cout << dostezhMatrix[i][j] << ' ';
         }
     }
     
