@@ -13,8 +13,8 @@ int vertArr[20][20];
 void printIncidenceMatrix(void);
 
 void displayMatrixAdjacency(int count) {
-    for(int i = 0; i < count; i++) {
-        for(int j = 0; j < count; j++) {
+    for(int i = 1; i < count; i++) {
+        for(int j = 1; j < count; j++) {
             cout << vertArr[i][j] << " ";
         }
         cout << endl;
@@ -23,7 +23,6 @@ void displayMatrixAdjacency(int count) {
 
 void add_edgeAdjacency(int u, int v) {
     vertArr[u][v] = 1;
-    vertArr[v][u] = 1;
 }
 
 void printAdjacencyMatrix() {
