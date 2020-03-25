@@ -11,7 +11,8 @@
 #include <iostream>
 using namespace std;
 
-void printIncidenceMatrix(void);
-void printAdjacencyMatrix(void);
+void printAdjacencyMatrix();
+void printIncidenceMatrix();
+
 
 #endif /* main_h */

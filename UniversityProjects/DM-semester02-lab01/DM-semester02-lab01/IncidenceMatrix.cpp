@@ -9,10 +9,10 @@
 
 #include "main.h"
 
-int inc_arr[20][20]; //initial array to hold incidence matrix
+int inc_arr[20][20];
 int ed_no = 0;
 
-void displayMatrix(int v, int e) {
+void displayMatrixIncidence(int v, int e) {
     int i, j;
     for(i = 0; i < v; i++) {
         for(j = 0; j < e; j++) {
@@ -22,23 +22,43 @@ void displayMatrix(int v, int e) {
     }
 }
 
-void add_edge(int u, int v) { //function to add edge into the matrix with edge number
+void add_edgeIncidence(int u, int v) { //function to add edge into the matrix with edge number
     inc_arr[u][ed_no] = 1;
     inc_arr[v][ed_no] = 1;
     ed_no++; //increase the edge number
 }
 
-void printIncidenceMatrix(void) {
-    int v = 6; //there are 6 vertices in the graph
+void printIncidenceMatrix() {
+    int v = 10; //there are 6 vertices in the graph
     int e = 9; //there are 9 edges in the graph
-    add_edge(0, 4);
-    add_edge(0, 3);
-    add_edge(1, 2);
-    add_edge(1, 4);
-    add_edge(1, 5);
-    add_edge(2, 3);
-    add_edge(2, 5);
-    add_edge(5, 3);
-    add_edge(5, 4);
-    displayMatrix(v, e);
+    add_edgeIncidence(1, 1);
+    add_edgeIncidence(1, 2);
+    add_edgeIncidence(1, 3);
+    add_edgeIncidence(1, 5);
+    add_edgeIncidence(2, 1);
+    add_edgeIncidence(2, 3);
+    add_edgeIncidence(2, 4);
+    add_edgeIncidence(2, 9);
+    add_edgeIncidence(3, 1);
+    add_edgeIncidence(3, 3);
+    add_edgeIncidence(3, 4);
+    add_edgeIncidence(3, 6);
+    add_edgeIncidence(4, 1);
+    add_edgeIncidence(4, 2);
+    add_edgeIncidence(4, 4);
+    add_edgeIncidence(5, 1);
+    add_edgeIncidence(5, 3);
+    add_edgeIncidence(6, 1);
+    add_edgeIncidence(6, 2);
+    add_edgeIncidence(6, 3);
+    add_edgeIncidence(6, 4);
+    add_edgeIncidence(6, 6);
+    add_edgeIncidence(7, 3);
+    add_edgeIncidence(7, 6);
+    add_edgeIncidence(9, 1);
+    add_edgeIncidence(9, 2);
+    add_edgeIncidence(9, 5);
+    add_edgeIncidence(9, 9);
+    
+    displayMatrixIncidence(v, e);
 }
