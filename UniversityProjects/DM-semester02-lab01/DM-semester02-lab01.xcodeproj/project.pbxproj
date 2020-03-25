@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E9FDF0E6242BADB4007DFD5C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9FDF0E5242BADB4007DFD5C /* main.cpp */; };
+		E9FDF0ED242BB4C8007DFD5C /* IncidenceMatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9FDF0EC242BB4C8007DFD5C /* IncidenceMatrix.cpp */; };
+		E9FDF0F0242BB6D3007DFD5C /* AdjacencyMatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9FDF0EF242BB6D3007DFD5C /* AdjacencyMatrix.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,9 @@
 /* Begin PBXFileReference section */
 		E9FDF0E2242BADB4007DFD5C /* DM-semester02-lab01 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "DM-semester02-lab01"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9FDF0E5242BADB4007DFD5C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		E9FDF0EC242BB4C8007DFD5C /* IncidenceMatrix.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = IncidenceMatrix.cpp; sourceTree = "<group>"; };
+		E9FDF0EE242BB5C3007DFD5C /* main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
+		E9FDF0EF242BB6D3007DFD5C /* AdjacencyMatrix.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AdjacencyMatrix.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +63,9 @@
 			isa = PBXGroup;
 			children = (
 				E9FDF0E5242BADB4007DFD5C /* main.cpp */,
+				E9FDF0EE242BB5C3007DFD5C /* main.h */,
+				E9FDF0EF242BB6D3007DFD5C /* AdjacencyMatrix.cpp */,
+				E9FDF0EC242BB4C8007DFD5C /* IncidenceMatrix.cpp */,
 			);
 			path = "DM-semester02-lab01";
 			sourceTree = "<group>";
@@ -119,7 +127,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9FDF0F0242BB6D3007DFD5C /* AdjacencyMatrix.cpp in Sources */,
 				E9FDF0E6242BADB4007DFD5C /* main.cpp in Sources */,
+				E9FDF0ED242BB4C8007DFD5C /* IncidenceMatrix.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
