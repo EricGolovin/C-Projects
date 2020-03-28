@@ -1,0 +1,3 @@
+Destination Name {Doha}, Flight Number {259}, Plane Model {BoingHRLarge};
+Destination Name {Seattle}, Flight Number {326}, Plane Model {BoingHRSmall};
+Destination Name {Santa Clara}, Flight Number {501}, Plane Model {BoingHRBig};
