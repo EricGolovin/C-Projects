@@ -23,24 +23,21 @@ typedef struct AEROFLOT {
 //}
 
 void printArrayOfStructs(AEROFLOT str[], int num) {
-    cout << endl;
+    cout << endl << "--------------Array of flights Data:--------------" << endl;
     for (int i = 0; i < num; i++) {
         cout << "struct #" << i + 1 << endl;
         cout << "Destination Name" << str[i].destinationName << endl;
         cout << "Flight Number " << str[i].flightNumber << endl;
         cout << "Plane Model" << str[i].planeModel << endl << endl;
     }
+    cout << "--------------------------------------------------" << endl;
 }
 
-int main(int argc, char *argv[]) {
+string readFileData(string fileName, int *numOfFlights) {
     fstream outFile;
     stringstream stringStream;
-    string fileName;
-    //    vector<AEROFLOT> dynArrayOfAeroflots (0);
     
-    int totalFlights = 0;
-    
-    outFile.open("testFile.txt", ios_base::in);
+    outFile.open(fileName, ios_base::in);
     
     if (outFile.is_open()) {
         cout << "File open successful. It contains: " << endl;
@@ -48,14 +45,21 @@ int main(int argc, char *argv[]) {
         
         while (outFile.good()) {
             getline(outFile, fileContent);
-            stringStream << totalFlights << "-" << fileContent << endl;
-            totalFlights++;
+            stringStream << *numOfFlights << "-" << fileContent << endl;
+            *numOfFlights += 1;
         }
         
         outFile.close();
     }
     
-    string fileData = stringStream.str();
+    return stringStream.str();
+}
+
+int main(int argc, char *argv[]) {
+    //    vector<AEROFLOT> dynArrayOfAeroflots (0);
+    int totalFlights = 0;
+    
+    string fileData = readFileData("testFile.txt", &totalFlights);
     AEROFLOT arrayOfFlights[totalFlights];
     
     for (int i = 0; i < totalFlights; i++) {
