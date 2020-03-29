@@ -26,9 +26,9 @@ void printArrayOfStructs(AEROFLOT str[], int num) {
     cout << endl << "--------------Array of flights Data:--------------" << endl;
     for (int i = 0; i < num; i++) {
         cout << "struct #" << i + 1 << endl;
-        cout << "Destination Name" << str[i].destinationName << endl;
-        cout << "Flight Number " << str[i].flightNumber << endl;
-        cout << "Plane Model" << str[i].planeModel << endl << endl;
+        cout << "Destination Name: " << str[i].destinationName << endl;
+        cout << "Flight Number: " << str[i].flightNumber << endl;
+        cout << "Plane Model: " << str[i].planeModel << endl << endl;
     }
     cout << "--------------------------------------------------" << endl;
 }
@@ -45,7 +45,7 @@ string readFileData(string fileName, int *numOfFlights) {
         
         while (outFile.good()) {
             getline(outFile, fileContent);
-            stringStream << *numOfFlights << "-" << fileContent << endl;
+            stringStream << "-" << fileContent << endl;
             *numOfFlights += 1;
         }
         
@@ -55,10 +55,13 @@ string readFileData(string fileName, int *numOfFlights) {
     return stringStream.str();
 }
 
+bool stringSorting(AEROFLOT flight01, AEROFLOT flight02) {
+    return flight01.destinationName < flight02.destinationName;
+}
+
 int main(int argc, char *argv[]) {
     //    vector<AEROFLOT> dynArrayOfAeroflots (0);
     int totalFlights = 0;
-    
     string fileData = readFileData("testFile.txt", &totalFlights);
     AEROFLOT arrayOfFlights[totalFlights];
     
@@ -68,7 +71,7 @@ int main(int argc, char *argv[]) {
         string destName;
         int flightNum;
         string planeModl;
-        
+
         for (int index = 0, flag = 0, parameterNumber = 0; index < fileData.length() - 1; index++) {
             if (fileData[index] == '{') {
                 flag = 1;
@@ -91,9 +94,13 @@ int main(int argc, char *argv[]) {
         }
         cout << someFlight.destinationName << ", " << someFlight.flightNumber << ", " << someFlight.planeModel << endl;
         arrayOfFlights[i] = someFlight;
+        fileData.erase(fileData.find('D'), fileData.find('\n'));
+        cout << fileData << endl;
     }
     
     printArrayOfStructs(arrayOfFlights, totalFlights);
-    
+    sort(arrayOfFlights, arrayOfFlights + totalFlights, stringSorting);
+    printArrayOfStructs(arrayOfFlights, totalFlights);
+        
     return 0;
 }
