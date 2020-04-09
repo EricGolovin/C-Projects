@@ -1,0 +1,9 @@
+Destination Name {Doha}, Flight Number {259}, Plane Model {BoingHRLarge};
+Destination Name {Seattle}, Flight Number {326}, Plane Model {BoingHRSmall};
+Destination Name {Oslo}, Flight Number {501}, Plane Model {BoingHRBig};
+Destination Name {Dublin}, Flight Number {755}, Plane Model {BoingHRSmall};
+Destination Name {Lisbon}, Flight Number {665}, Plane Model {BoingHRLarge};
+Destination Name {Lisbon}, Flight Number {986}, Plane Model {BoingHRBig};
+Destination Name {Seattle}, Flight Number {234}, Plane Model {BoingHRSmall};
+Destination Name {Dublin}, Flight Number {541}, Plane Model {BoingHRBig};
+Destination Name {Berlin}, Flight Number {253}, Plane Model {BoingHRLarge};
